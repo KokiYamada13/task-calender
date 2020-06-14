@@ -26,6 +26,16 @@
     <%= form.text_area :details %>
   </div>
 
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.datetime_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.datetime_select :end_date %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
