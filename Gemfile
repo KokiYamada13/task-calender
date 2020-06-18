@@ -76,3 +76,4 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
 gem 'bootstrap'
+gem 'kaminari', '~> 0.17.0'

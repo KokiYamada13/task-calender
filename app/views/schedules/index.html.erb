@@ -27,6 +27,7 @@
         <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <%= paginate @schedules %>
   </tbody>
 </table>
 

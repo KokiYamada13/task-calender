@@ -38,6 +38,7 @@ $(function () {
             $('#calendar').fullCalendar({
                 events: '/schedules.json',
                 titleFormat: 'YYYY年 M月',
+                timeZone: 'Asia/Tokyo',
                 dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
                 header: {
                     left: '',
@@ -59,7 +60,7 @@ $(function () {
                 timeFormat: "HH:mm",
                 eventColor: '#87cefa',
                 eventTextColor: '#000000',
-                eventRender: function(event, element) {
+                eventRender: function(_event, element) {
                     element.css("font-size", "0.8em");
                     element.css("padding", "5px");
                 }

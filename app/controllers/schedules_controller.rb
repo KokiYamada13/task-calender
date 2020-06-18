@@ -1,28 +1,21 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
-  # GET /schedules
-  # GET /schedules.json
   def index
     @schedules = Schedule.all
+    @schedules = Schedule.page(params[:page]).per(3)
   end
 
-  # GET /schedules/1
-  # GET /schedules/1.json
   def show
   end
 
-  # GET /schedules/new
   def new
     @schedule = Schedule.new
   end
 
-  # GET /schedules/1/edit
   def edit
   end
 
-  # POST /schedules
-  # POST /schedules.json
   def create
     @schedule = Schedule.new(schedule_params)
 
@@ -37,8 +30,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /schedules/1
-  # PATCH/PUT /schedules/1.json
   def update
     respond_to do |format|
       if @schedule.update(schedule_params)
@@ -51,8 +42,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # DELETE /schedules/1
-  # DELETE /schedules/1.json
   def destroy
     @schedule.destroy
     respond_to do |format|
@@ -62,12 +51,10 @@ class SchedulesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_schedule
       @schedule = Schedule.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def schedule_params
       params.require(:schedule).permit(:title, :address, :details, :start_date, :end_date)
     end
